@@ -116,19 +116,19 @@ if(isset($_POST['signup'])){
                 $message = "Your password reset code is $code";
                 $sender = "From:nandine0804@gmail.com";
                 if(mail($email, $subject, $message, $sender)){
-                    $info = "We've sent a passwrod reset otp to your email - $email";
+                    $info = "We've sent a password reset otp to your email Please check it - $email";
                     $_SESSION['info'] = $info;
                     $_SESSION['email'] = $email;
                     header('location: reset-code.php');
                     exit();
                 }else{
-                    $errors['otp-error'] = "Failed while sending code!";
+                    $errors['otp-error'] = "Oops!,Failed while sending code!";
                 }
             }else{
-                $errors['db-error'] = "Something went wrong!";
+                $errors['db-error'] = "Oh no,Something went wrong!";
             }
         }else{
-            $errors['email'] = "This email address does not exist!";
+            $errors['email'] = "Looks like this email address does not exist!";
         }
     }
 
@@ -142,12 +142,12 @@ if(isset($_POST['signup'])){
             $fetch_data = mysqli_fetch_assoc($code_res);
             $email = $fetch_data['email'];
             $_SESSION['email'] = $email;
-            $info = "Please create a new password that you don't use on any other site.";
+            $info = "Please create a new password.";
             $_SESSION['info'] = $info;
             header('location: new-password.php');
             exit();
         }else{
-            $errors['otp-error'] = "You've entered incorrect code!";
+            $errors['otp-error'] = "You've entered incorrect code,Check carefully!";
         }
     }
 
@@ -165,7 +165,7 @@ if(isset($_POST['signup'])){
             $update_pass = "UPDATE usertable SET code = $code, password = '$encpass' WHERE email = '$email'";
             $run_query = mysqli_query($con, $update_pass);
             if($run_query){
-                $info = "Your password changed. Now you can login with your new password.";
+                $info = "You're good to go. Now you can login with your new password.";
                 $_SESSION['info'] = $info;
                 header('Location: password-changed.php');
             }else{
