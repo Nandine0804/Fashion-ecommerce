@@ -1,12 +1,6 @@
 -- phpMyAdmin SQL Dump
 -- version 5.1.0
 -- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Mar 26, 2021 at 03:11 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -19,11 +13,6 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `userform`
---
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `usertable`
 --
 
