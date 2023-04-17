@@ -900,11 +900,11 @@ nav .header__cart .header__submenu {
 
 nav .header__cart .header__submenu .shopping-cart-container {
     text-align: center;
-    min-width: 300px;
+    min-width: 200px;
 }
 
 nav .header__cart .header__submenu .shopping-cart-container table {
-    width: 100%;
+    width: 90%;
     padding: 0.5em;
     padding-bottom: 2em;
     border-collapse: collapse;
@@ -926,7 +926,7 @@ nav .header__cart .header__submenu .shopping-cart-container table tbody td {
 }
 
 nav .header__cart .header__submenu .cart-image {
-    max-width: 120px;
+    max-width: 100px;
 }
 
 nav .header__cart .header__submenu .remove {
@@ -1081,4 +1081,112 @@ nav .header__title {
         margin-left: 100%;
         margin-top: -40px;
     }
+}
+
+.cart p {
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    color: white;
+}
+
+.container_1 {
+    display: flex;
+    width: 100%;
+    color: white;
+    margin-bottom: 30px;
+    padding: 100px;
+}
+
+.col-lg-3 {
+    -ms-flex: 0 0 0%;
+    flex: 0 0 0%;
+    max-width: 0%;
+}
+
+.sidebar {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #030d29;
+    margin-left: 20px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.head {
+    background-color: grey;
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #333;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    border-bottom: 1px solid #aaa;
+    border-radius: 3px;
+    margin: 10px 10px;
+}
+
+.row-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid rgb(44, 12, 131);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rowimg {
+    max-width: 43px;
+    max-height: 43px;
+    border-radius: 50%;
+}
+
+.fa-trash:hover {
+    cursor: pointer;
+    color: #333;
+}
+
+#root {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+#root_1,
+#root_2 {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+#count {
+    background-color: blue;
+    border-radius: 50%;
+    padding: 14px;
+    color: white;
+    white-space: nowrap;
 }

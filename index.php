@@ -67,68 +67,43 @@ if($email != false && $password != false){
                         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Shop</a>
+                        <a class="nav-link" href="shop.php">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
-
-
-</ul>
- <div class="icons">
+ <li>
+                        <div class="cart">
+                            <a href="#cart-things">
+                                <i class="fas fa-shopping-cart"></i>
+                                </a>
+                                <p id="count">0</p></div>
+                     </li>
                     
-<ul>
-    
+
+                </ul>
+                   <div class="icons">
+                    <ul>
                         <li class="nav-item ml-10" id="detail_person">
                             <h4 class="data">Hi <?php echo $fetch_info['name'] ?></h4>
                              
                         </li>
                         <button type="button" id="logout" class="btn-dark"><a href="logout-user.php"><img src="logout.png" class="logout-logo" alt="logout"/>Logout</a></button>
-</ul>
+                    
+                    
+                    </ul>
 
                     </div>
-<div class="header__cart">
-                    <ul>
-                        <li class="header__submenu text-black" id="submenu">
-                            <button class="header__cart-btn" id="toggle-cart-btn"><svg class="cart" width="24" height="24" viewBox="0 0 24 24">
-                   <path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z"></path>
-             </svg>CART</button>
-                            <div id="shopping-cart" class="shopping-cart-container">
-                                <table id="cart-content">
-                                    <thead>
-                                        <tr>
-                                            <th>Image</th>
-                                            <th>Name</th>
-                                            <th>Price</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
-                                <p class="total-container" id="total-price"></p>
-                                <a href="checkout.html" id="checkout-btn" class="cart-btn">Checkout</a>
-                                <a href="#" id="clear-cart" class="cart-btn">Clear Cart</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div> 
-        
-        
 
-                   
-                
-            
-            
-        </div>
+             </div>
         
     </nav>
     <section class="hero-section ">
         <div class="container ">
-            <h5>Lorem ipsum <span>Lorem, ipsum dolor.
-                </span>dolor sit amet.</h5>
-            <h1>Lorem ipsum dolor sit amet.</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum laboriosam ut quae eaque non nobis.
+            <h5>New Clothes, New Passion.
+                </span>Complement your flawless beauty.</h5>
+            <h1>The best look anytime anywhere. As gorgeous as you</h1>
+            <p>Clothes are the spirit of Fashion.Choose to look classy
             </p>
             <button class="text-uppercase "><a href="#">SHOP NOW</a></button>
 
@@ -157,8 +132,8 @@ if($email != false && $password != false){
                     alt="pic-1 " />
 
                 <div class="details">
-                    <h4>Lorem, ipsum dolor.</h4>
-                    <button class="text-uppercase ">SHOP NOW</button>
+                    <h4>Wear the best.</h4>
+                    
                 </div>
             </div>
             <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
@@ -167,8 +142,8 @@ if($email != false && $password != false){
                     alt="pic-1 " />
 
                 <div class="details">
-                    <h4>Lorem, ipsum dolor.</h4>
-                    <button class="text-uppercase">SHOP NOW</button>
+                    <h4>Feel the authentic peace.</h4>
+                 
                 </div>
             </div>
             <div class="one col-lg-4 col-md-12 col-sm-12 p-0 ">
@@ -176,8 +151,8 @@ if($email != false && $password != false){
                     src="https://media.voguebusiness.com/photos/5dddb3e8db92720008c2cdc4/2:3/w_2560%2Cc_limit/price-increases-in-luxury-voguebus-getty-imges-nov-19-article.jpg "
                     alt="pic-1 " />
                 <div class="details ">
-                    <h4>Lorem, ipsum dolor.</h4>
-                    <button class="text-uppercase ">SHOP NOW</button>
+                    <h4>Fashion is nothing without people</h4>
+                   
                 </div>
             </div>
 
@@ -188,154 +163,18 @@ if($email != false && $password != false){
         <div class="container text-center mt-5 py-5 ">
             <h3>Our Featured</h3>
             <hr class="hr mx-auto ">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ipsam?</p>
+            <p>Life isn’t perfect but your outfit can be. <br/>A New Revolution.A New Perspective</p>
         </div>
-        
-        <div class="row mx-auto container-fluid grid" id="grid">
-        
-           
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="1">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="2">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="3">Add to cart</button>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="4">Add to cart</button>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="5">Add to cart</button>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="6">Add to cart</button>
-            </div>
-<div class="product text-center col-lg-3 col-md-4 col-sm-12 card-item border-0 card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="7">Add to cart</button>
-            </div>
-<div class="product text-center col-lg-3 col-md-4 col-sm-12 card-item border-0 card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="8">Add to cart</button>
-            </div>
-
-        </div>
-        
-         
+        <div id="root"></div>
+ </div>
+            
 
     </section>
 
     <section id="banner" class="my-5 py-5">
         <div class="container ">
-            <h4>Lorem, ipsum dolor.</h4>
-            <h1>Lorem ipsum dolor sit.
+            <h4>Different is beautiful</h4>
+            <h1>Designed only for you.
                 <br />upto 30% OFF
             </h1>
             <button class="text-uppercase " id="carts">Shop Now</button>
@@ -344,291 +183,51 @@ if($email != false && $password != false){
 
 
 
-    <section id="featured " class="my-5 ">
+    
+
+
+
+
+     <section id="featured"  class="my-5 pb-5 ">
         <div class="container text-center mt-5 py-5 ">
-            <h3>Dresses and Coats</h3>
-            <hr class="mx-auto hr ">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ipsam?</p>
+            <h3>Our Featured</h3>
+            <hr class="hr mx-auto ">
+            <p>Life isn’t perfect but your outfit can be. <br/>A New Revolution.A New Perspective</p>
         </div>
-        <div class="row mx-auto container-fluid ">
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="9">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="10">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="11">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="12">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="13">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="14">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="15">Add to cart</button>
-            </div>
-             <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="23">Add to cart</button>
-            </div>
-            
-            
-</div>
-            
+        <div id="root_1"></div>
+        
+        
+         
 
     </section>
 
 
-    <section id="featured " class="my-5 ">
+     <section id="featured"  class="my-5 pb-5 ">
         <div class="container text-center mt-5 py-5 ">
-            <h3>Children section and 13 Age below</h3>
-            <hr class="mx-auto hr ">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ipsam?</p>
+            <h3>Our Featured</h3>
+            <hr class="hr mx-auto ">
+            <p>Life isn’t perfect but your outfit can be. <br/>A New Revolution.A New Perspective</p>
         </div>
-       
-        <div class="row mx-auto container-fluid ">
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="16">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="17">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="18">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="19">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="20">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="21">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="22">Add to cart</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card" >
-                <img class="img-fluid mb-3 card_image"
-                    src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 "
-                    alt=" ">
-                <div class="star ">
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                    <i class="fas fa-star "></i>
-                </div>
-                <h5 class="p-name card__title">Women Cloths</h5>
-                <h4 class="p-price card__price">$150.00</h4>
-                <i class="fa fa-shopping-cart" id="add-to-cart"></i>
-                <button type="submit" class="buy-btn card__btn add-to-cart" data-id="23">Add to cart</button>
-            </div>
-            
-            
-</div>
+        <div id="root_2"></div>
+        
+        
+         
 
     </section>
 
+
+   
+<div class="container_1" id="cart-things">
+<h1 class="text-black">CART ITEMS</h1>
+           <div class="sidebar">
+                <div class="head"><p>My Cart</p></div>
+                <div id="cartItem">Your cart is empty</div>
+                <div class="foot">
+                    <h3>Total</h3>
+                    <h2 id="total">$ 0.00</h2>
+                </div>
+            </div>
+        </div>
 
         
 <div class=" footer-basic ">
@@ -641,8 +240,8 @@ if($email != false && $password != false){
         <ul class=" list-inline ">
     
             <li class=" list-inline-item "><a href=" index.php ">Home</a></li>
-            <li class=" list-inline-item "><a href=" shop.html ">Shop</a></li>
-            <li class=" list-inline-item "><a href=" contact.html ">Contact</a></li>
+            <li class=" list-inline-item "><a href=" shop.php ">Shop</a></li>
+            <li class=" list-inline-item "><a href=" contact.php ">Contact</a></li>
         
         
         </ul>

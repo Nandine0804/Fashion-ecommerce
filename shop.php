@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+
+<?php require_once "controllerUserData.php"; ?>
+<?php 
+$email = $_SESSION['email'];
+$password = $_SESSION['password'];
+if($email != false && $password != false){
+    $sql = "SELECT * FROM usertable WHERE email = '$email'";
+    $run_Sql = mysqli_query($con, $sql);
+    if($run_Sql){
+        $fetch_info = mysqli_fetch_assoc($run_Sql);
+        $status = $fetch_info['status'];
+        $code = $fetch_info['code'];
+        if($status == "verified"){
+            if($code != 0){
+                header('Location: reset-code.php');
+            }
+        }else{
+            header('Location: user-otp.php');
+        }
+    }
+}else{
+    header('Location: login-user.php');
+}
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,10 +39,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top" id="navbar">
+   <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top" id="navbar">
         <div class="container container header__top">
             <a class="navbar-brand" href="index.php">BRANDZZ</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -29,71 +53,48 @@
                         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Shop</a>
+                        <a class="nav-link" href="shop.php">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
-
+ <li>
+                        <div class="cart">
+                            <a href="cart.php">
+                                <i class="fas fa-shopping-cart"></i>
+                                </a>
+                                <p id="count">0</p></div>
+                     </li>
+                    
 
                 </ul>
-
-                <div class="header__cart">
+                   <div class="icons">
                     <ul>
-                        <li class="header__submenu text-black" id="submenu">
-                            <button class="header__cart-btn" id="toggle-cart-btn"><svg class="cart" width="24" height="24"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z">
-                                    </path>
-                                </svg>CART</button>
-                            <div id="shopping-cart" class="shopping-cart-container">
-                                <table id="cart-content">
-                                    <thead>
-                                        <tr>
-                                            <th>Image</th>
-                                            <th>Name</th>
-                                            <th>Price</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
-                                <p class="total-container" id="total-price"></p>
-                                <a href="checkout.html" id="checkout-btn" class="cart-btn">Checkout</a>
-                                <a href="#" id="clear-cart" class="cart-btn">Clear Cart</a>
-                            </div>
+                        <li class="nav-item ml-10" id="detail_person">
+                            <h4 class="data">Hi <?php echo $fetch_info['name'] ?></h4>
+                             
                         </li>
+                        <button type="button" id="logout" class="btn-dark"><a href="logout-user.php"><img src="logout.png" class="logout-logo" alt="logout"/>Logout</a></button>
+                    
+                    
                     </ul>
-                </div>
-            </div>
-            <div class="icons">
 
-                <ul>
+                    </div>
 
-                    <li class="nav-item ml-10" id="detail_person">
-                        <h4 class="data">Hi
-                            <?php echo $fetch_info['name'] ?>
-                        </h4>
-                        <button type="button" id="logout" class="btn-dark"><a href="logout-user.php">Logout</a></button>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-        </div>
-
+             </div>
+        
     </nav>
-    <section id="featured " class="my-5 ">
-        <div class="container text-center mt-7 py-5 ">
-            <h3 class="mt-5">Children section and 13 Age below</h3>
+
+    <section id="featured " class="my-5 mt-5">
+        <div class="container text-center mt-5 py-5 ">
+            <h3>Children section and 13 Age below</h3>
             <hr class="mx-auto hr ">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ipsam?</p>
+            <p>Fresh Fashion of Beauty</p>
         </div>
 
         <div class="row mx-auto container-fluid ">
             <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card">
-                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 " alt=" ">
+                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/5559986/pexels-photo-5559986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=" ">
                 <div class="star ">
                     <i class="fas fa-star "></i>
                     <i class="fas fa-star "></i>
@@ -107,7 +108,7 @@
                 <button type="submit" class="buy-btn card__btn add-to-cart" data-id="16">Add to cart</button>
             </div>
             <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card">
-                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 " alt=" ">
+                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/1620769/pexels-photo-1620769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=" ">
                 <div class="star ">
                     <i class="fas fa-star "></i>
                     <i class="fas fa-star "></i>
@@ -121,7 +122,7 @@
                 <button type="submit" class="buy-btn card__btn add-to-cart" data-id="17">Add to cart</button>
             </div>
             <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card">
-                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 " alt=" ">
+                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/5560019/pexels-photo-5560019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=" ">
                 <div class="star ">
                     <i class="fas fa-star "></i>
                     <i class="fas fa-star "></i>
@@ -135,7 +136,7 @@
                 <button type="submit" class="buy-btn card__btn add-to-cart" data-id="18">Add to cart</button>
             </div>
             <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card">
-                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 " alt=" ">
+                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/1493108/pexels-photo-1493108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=" ">
                 <div class="star ">
                     <i class="fas fa-star "></i>
                     <i class="fas fa-star "></i>
@@ -149,7 +150,7 @@
                 <button type="submit" class="buy-btn card__btn add-to-cart" data-id="19">Add to cart</button>
             </div>
             <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card">
-                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 " alt=" ">
+                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/7140713/pexels-photo-7140713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=" ">
                 <div class="star ">
                     <i class="fas fa-star "></i>
                     <i class="fas fa-star "></i>
@@ -163,7 +164,7 @@
                 <button type="submit" class="buy-btn card__btn add-to-cart" data-id="20">Add to cart</button>
             </div>
             <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card">
-                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 " alt=" ">
+                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/1619801/pexels-photo-1619801.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=" ">
                 <div class="star ">
                     <i class="fas fa-star "></i>
                     <i class="fas fa-star "></i>
@@ -177,7 +178,7 @@
                 <button type="submit" class="buy-btn card__btn add-to-cart" data-id="21">Add to cart</button>
             </div>
             <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card">
-                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 " alt=" ">
+                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/5560013/pexels-photo-5560013.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=" ">
                 <div class="star ">
                     <i class="fas fa-star "></i>
                     <i class="fas fa-star "></i>
@@ -191,7 +192,7 @@
                 <button type="submit" class="buy-btn card__btn add-to-cart" data-id="22">Add to cart</button>
             </div>
             <div class="product text-center col-lg-3 col-md-4 col-sm-12 border-0 card-item card">
-                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 " alt=" ">
+                <img class="img-fluid mb-3 card_image" src="https://images.pexels.com/photos/1619786/pexels-photo-1619786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=" ">
                 <div class="star ">
                     <i class="fas fa-star "></i>
                     <i class="fas fa-star "></i>
@@ -207,7 +208,6 @@
 
 
         </div>
-
     </section>
 
     <div class=" footer-basic ">
@@ -219,8 +219,8 @@
 
                 <ul class=" list-inline ">
                     <li class=" list-inline-item "><a href="index.php">Home</a></li>
-                    <li class=" list-inline-item "><a href="shop.html">Shop</a></li>
-                    <li class=" list-inline-item "><a href="contact.html">Contact</a></li>
+                    <li class=" list-inline-item "><a href="shop.php">Shop</a></li>
+                    <li class=" list-inline-item "><a href="contact.php">Contact</a></li>
 
                 </ul>
 

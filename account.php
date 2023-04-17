@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce website</title>
     <script src="https://kit.fontawesome.com/544ad584ac.js" crossorigin="anonymous"></script>
@@ -52,21 +52,38 @@
         </div>
     </nav>
 
+    <section class="my-5 py-5">
+        <div class="row container mx-auto">
+            <div class="text-center t-3 pt-5 col-lg-6 col-md-12 col-sm-12">
 
-
-    <section id="content" class="container my-5 py-5">
-        <div class="container text-center mt-5">
-            <h3>Contact Us</h3>
-            <hr class="hr mx-auto">
-            <p class="w-50 mx-auto">
-                Phone number:123456789
-            </p>
-            <p class="w-50 mx-auto">
-                Email-address : BRANDZZ2email.com
-            </p>
-            <p class="w-50 mx-auto">
-                We work on fashion style
-            </p>
+                <h3 class="font-weight-bold">Account info</h3>
+                <hr class="hr mx-auto">
+                <div class="account-info">
+                    <p>Name<span>Nandine</span></p>
+                    <p>Email<span>nandine0804</span></p>
+                    <p>
+                        <a href="" id="order-btn">Your orders</a>
+                    </p>
+                    <p>
+                        <a href="" id="logout-btn">Logout</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <form id="account-form">
+                    <h3>Change password</h3>
+                    <hr class="hr mx-auto">
+                    <div class="form-group"> <label>Password</label>
+                        <input type="password" class="form-control" id="register-password" name="password" placeholder="" />
+                    </div>
+                    <div class="form-group"> <label>Confirm Password</label>
+                        <input type="password" class="form-control" id="register-confirm-password" name="password" placeholder="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" id="change-pass-btn" class="btn" value="Change Password" id="register-confirm-password" name="password" placeholder="" />
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
     <div class=" footer-basic ">

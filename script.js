@@ -1,267 +1,342 @@
-(function() {
-  // VARS
-  const productsContainer = document.querySelector("#grid");
-  const cartContainer = document.querySelector("#shopping-cart");
-  const cartContent = document.querySelector("#cart-content");
-  const toggleCartBtn = document.querySelector("#toggle-cart-btn");
-  const clearCartBtn = document.querySelector("#clear-cart");
-  const checkoutBtn = document.querySelector("#checkout-btn");
-  const totalPriceContainer = document.querySelector("#total-price");
+const product = [
+  {
+    id: 0,
+    image:
+      "https://images.pexels.com/photos/5559986/pexels-photo-5559986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Kids cloth",
+    price:150,
+  },
+  {
+    id: 1,
+    image:
+      "https://images.pexels.com/photos/1620769/pexels-photo-1620769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Kid cloth +3 age , green",
+    price: 260,
+  },
+  {
+    id: 2,
+    image:
+      "https://images.pexels.com/photos/5560019/pexels-photo-5560019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=",
+    title: "Kids Cloth",
+    price: 290,
+  },
+  {
+    id: 3,
+    image:
+      "https://images.pexels.com/photos/1493108/pexels-photo-1493108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Kids cloth",
+    price: 200,
+  },
+];
+const categories = [
+  ...new Set(
+    product.map((item) => {
+      return item;
+    })
+  ),
+];
+let i = 0;
+document.getElementById("root").innerHTML = categories
+  .map((item) => {
+    var { image, title, price } = item;
+    return (
+      `
+      <div class="row mx-auto container-fluid box">
+      <div class="border-0 col-sm">
+                <img class='img-fluid mb-3' src=${image}></img>
+            <div class="star ">
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                </div>
+        <div class='bottom'>
+        <p class='card__title'>${title}</p>
+        <h2 class='card__price'>$ ${price}.00</h2>` +
+      "<button onclick='addtocart(" +
+      i++ +
+      ")'>Add to cart</button>" +
+      `</div>
+        </div></div>`
+    );
+  })
+  .join("");
 
-  // FUNCTIONS
+var cart = [];
 
-  function toggleCart() {
-    // toggle shopping cart visibility
-    cartContainer.classList.toggle("open");
+function addtocart(a) {
+  cart.push({ ...categories[a] });
+  displaycart();
+}
+function delElement(a) {
+  cart.splice(a, 1);
+  displaycart();
+}
+
+function displaycart() {
+  let j = 0,
+    total = 0;
+  document.getElementById("count").innerHTML = cart.length;
+  if (cart.length == 0) {
+    document.getElementById("cartItem").innerHTML = "Your cart is empty";
+    document.getElementById("total").innerHTML = "$ " + 0 + ".00";
+  } else {
+    document.getElementById("cartItem").innerHTML = cart
+      .map((items) => {
+        var { image, title, price } = items;
+        total = total + price;
+        document.getElementById("total").innerHTML = "$ " + total + ".00";
+        return (
+          `<div class='cart-item'>
+                <div class='row-img'>
+                    <img class='rowimg' src=${image}>
+                </div>
+                <p style='font-size:12px;'>${title}</p>
+                <h2 style='font-size: 15px;'>$ ${price}.00</h2>` +
+          "<i class='fa-solid fa-trash' onclick='delElement(" +
+          j++ +
+          ")'></i></div>"
+        );
+      })
+      .join("");
   }
+}
 
-  function getLSContent() {
-    // get contents from local storage.
-    // if nothing is there, create an empty array
-    const lsContent = JSON.parse(localStorage.getItem("products")) || [];
-    return lsContent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const products = [
+  {
+    id: 0,
+    image:
+      "https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Cool Women Coat , black ",
+    price: 240,
+  },
+  {
+    id: 1,
+    image:
+      "https://images.pexels.com/photos/3195979/pexels-photo-3195979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Women cloth",
+    price: 220,
+  },
+  {
+    id: 2,
+    image:
+      "https://images.pexels.com/photos/1375736/pexels-photo-1375736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Women clothing",
+    price: 230,
+  },
+  {
+    id: 3,
+    image:
+      "https://images.pexels.com/photos/12821062/pexels-photo-12821062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Cool fashion, men",
+    price: 100,
+  },
+];
+const categorie = [
+  ...new Set(
+    products.map((item) => {
+      return item;
+    })
+  ),
+];
+let j = 0;
+document.getElementById("root_1").innerHTML = categorie
+  .map((item) => {
+    var { image, title, price } = item;
+    return (
+      `
+      <div class="row mx-auto container-fluid box">
+      <div class="border-0 col-sm">
+                <img class='img-fluid mb-3' src=${image}></img>
+            <div class="star ">
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                </div>
+        <div class='bottom'>
+        <p class='card__title'>${title}</p>
+        <h2 class='card__price'>$ ${price}.00</h2>` +
+      "<button onclick='addtocart(" +
+      j++ +
+      ")'>Add to cart</button>" +
+      `</div>
+        </div></div>`
+    );
+  })
+  .join("");
+
+var cart = [];
+
+function addtocart(a) {
+  cart.push({ ...categorie[a] });
+  displaycart();
+}
+function delElement(a) {
+  cart.splice(a, 1);
+  displaycart();
+}
+
+function displaycart() {
+  let m = 0,
+    total = 0;
+  document.getElementById("count").innerHTML = cart.length;
+  if (cart.length == 0) {
+    document.getElementById("cartItem").innerHTML = "Your cart is empty";
+    document.getElementById("total").innerHTML = "$ " + 0 + ".00";
+  } else {
+    document.getElementById("cartItem").innerHTML = cart
+      .map((items) => {
+        var { image, title, price } = items;
+        total = total + price;
+        document.getElementById("total").innerHTML = "$ " + total + ".00";
+        return (
+          `<div class='cart-item'>
+                <div class='row-img'>
+                    <img class='rowimg' src=${image}>
+                </div>
+                <p style='font-size:20px;'>${title}</p>
+                <h2 style='font-size: 21px;'>$ ${price}.00</h2>` +
+          "<i class='fa-solid fa-trash' onclick='delElement(" +
+          m++ +
+          ")'></i></div>"
+        );
+      })
+      .join("");
   }
+}
 
-  function setLSContent(lsContent) {
-    // save content inside local storage
-    localStorage.setItem("products", JSON.stringify(lsContent));
+
+
+
+
+
+
+
+
+
+const productss = [
+  {
+    id: 0,
+    image:
+      "https://images.pexels.com/photos/4352249/pexels-photo-4352249.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Cool Women Coat , black ",
+    price: 240,
+  },
+  {
+    id: 1,
+    image:
+      "https://images.pexels.com/photos/5651312/pexels-photo-5651312.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Women cloth",
+    price: 260,
+  },
+  {
+    id: 2,
+    image:
+      "https://images.pexels.com/photos/9154696/pexels-photo-9154696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Men coat clothing",
+    price: 330,
+  },
+  {
+    id: 3,
+    image:
+      "https://images.pexels.com/photos/9459406/pexels-photo-9459406.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Cool fashion, men",
+    price: 300,
+  },
+];
+const categoriess = [
+  ...new Set(
+    productss.map((item) => {
+      return item;
+    })
+  ),
+];
+let n = 0;
+document.getElementById("root_2").innerHTML = categoriess
+  .map((item) => {
+    var { image, title, price } = item;
+    return (
+      `
+      <div class="row mx-auto container-fluid box">
+      <div class="border-0 col-sm">
+                <img class='img-fluid mb-3' src=${image}></img>
+            <div class="star ">
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                </div>
+        <div class='bottom'>
+        <p class='card__title'>${title}</p>
+        <h2 class='card__price'>$ ${price}.00</h2>` +
+      "<button onclick='addtocart(" +
+      n++ +
+      ")'>Add to cart</button>" +
+      `</div>
+        </div></div>`
+    );
+  })
+  .join("");
+
+var cart = [];
+
+function addtocart(a) {
+  cart.push({ ...categorie[a] });
+  displaycart();
+}
+function delElement(a) {
+  cart.splice(a, 1);
+  displaycart();
+}
+
+function displaycart() {
+  let x = 0,
+    total = 0;
+  document.getElementById("count").innerHTML = cart.length;
+  if (cart.length == 0) {
+    document.getElementById("cartItem").innerHTML = "Your cart is empty";
+    document.getElementById("total").innerHTML = "$ " + 0 + ".00";
+  } else {
+    document.getElementById("cartItem").innerHTML = cart
+      .map((items) => {
+        var { image, title, price } = items;
+        total = total + price;
+        document.getElementById("total").innerHTML = "$ " + total + ".00";
+        return (
+          `<div class='cart-item'>
+                <div class='row-img'>
+                    <img class='rowimg' src=${image}>
+                </div>
+                <p style='font-size:20px;'>${title}</p>
+                <h2 style='font-size: 21px;'>$ ${price}.00</h2>` +
+          "<i class='fa-solid fa-trash' onclick='delElement(" +
+          x++ +
+          ")'></i></div>"
+        );
+      })
+      .join("");
   }
-
-  function calculateTotal(prices) {
-    // calculate the total price in the cart
-    return prices.reduce(function(prev, next) {
-      return prev + next;
-    }, 0);
-  }
-
-  function getCartItemPrices() {
-    // extract the price numbers from the cart items to calculate total
-    const prices = [];
-    // retrieve the td element in the cart where the product price is stored
-    // for each product in the cart
-    let nums = cartContent.querySelectorAll("tr td:nth-child(3)");
-
-    // iterate over each td node and extract the price
-    // strip the $ sign from the text, turn the string into
-    // a number and push the number into the prices array
-    if (nums.length > 0) {
-      for (let cell = 0; cell < nums.length; cell++) {
-        let num = nums[cell].innerText;
-        num = num.replace(/[^\d]/g, "");
-        num = parseFloat(num);
-        prices.push(num);
-      }
-      // return the prices array
-      return prices;
-    } else {
-      return;
-    }
-  }
-
-  function displayCartTotal() {
-    // display the total cost in the cart
-    const prices = getCartItemPrices();
-    let total = 0;
-    if (prices) {
-      total = calculateTotal(prices);
-      totalPriceContainer.innerHTML = `<span class="total">Total: $${total.toFixed(
-        2
-      )}</span>`;
-    } else {
-      totalPriceContainer.innerHTML = '<span class="total">Total: $0</span>';
-    }
-  }
-
-  function displayProducts() {
-    // display all products in the cart
-
-    // get contents from local storage
-    const lsContent = getLSContent();
-    let productMarkup = "";
-    // if local storage is not empty, build the
-    // cart items markup and the appropriate details
-    if (lsContent !== null) {
-      for (let product of lsContent) {
-        productMarkup += `
-          <tr>
-          <td><img class="cart-image" src="${product.image}" alt="${
-          product.name
-        }" width="120"></td>
-          <td>
-            ${product.name}
-          </td>
-          <td>${product.price}</td>
-          <td><a href="#" data-id="${product.id}" class="remove">X</a></td>
-          </tr>
-        `;
-      }
-    } else {
-      // if no content is in local storage, alert user
-      productMarkup = "Your cart is empty.";
-    }
-    // add markup to DOM
-    cartContent.querySelector("tbody").innerHTML = productMarkup;
-  }
-
-  function saveProduct(clickedBtn) {
-    // save selected product in local storage and display it in the cart together
-
-    // vars
-    const productId = clickedBtn.getAttribute("data-id");
-    const card = clickedBtn.parentElement.parentElement;
-    const cardInfo = clickedBtn.parentElement;
-    const prodImage = card.querySelector("img").src;
-    const prodName = cardInfo.querySelector("h4").textContent;
-    const prodPrice = cardInfo.querySelector(".card__price").textContent;
-
-    let isProductInCart = false;
-
-    // get local storage array
-    const lsContent = getLSContent();
-
-    // to avoid user adds the same course twice, check
-    // the product is not in LS already before adding it
-    lsContent.forEach(function(product) {
-      if (product.id === productId) {
-        alert("This course is already in your cart.");
-        isProductInCart = true;
-      }
-    });
-
-    // only if the product is not already in the cart,
-    // create an object representing selected product info
-    // and push it into local storage array
-    if (!isProductInCart) {
-      lsContent.push({
-        id: productId,
-        image: prodImage,
-        name: prodName,
-        price: prodPrice
-      });
-
-      // add product into into local storage
-      setLSContent(lsContent);
-      // update the display of courses in the shopping cart
-      displayProducts();
-    }
-  }
-
-  function removeProduct(productId) {
-    // remove product from cart (and from local storage)
-
-    // retrieve list of products from LS
-    const lsContent = getLSContent();
-
-    // get the index of the product item to remove
-    // inside the local storage content array
-    let productIndex;
-    lsContent.forEach(function(product, i) {
-      if (product.id === productId) {
-        productIndex = i;
-      }
-    });
-
-    // modify the items in local storage array
-    // to remove the selected product item
-
-    lsContent.splice(productIndex, 1);
-    // update local storage content
-    setLSContent(lsContent);
-
-    displayProducts();
-  }
-
-  function clearCart() {
-    // clear all products from cart (and local storage)
-
-    // retrieve list of products from LS
-    const lsContent = getLSContent();
-    // empty array in local storage
-    lsContent.splice(0, lsContent.length);
-    // update local storage
-    setLSContent(lsContent);
-    // display cart content again
-    displayProducts();
-  }
-
-  function checkout() {
-    // checkout: just clear the cart
-    // after user confirms the checkout process
-    const cartProducts = cartContent.querySelector("tbody").innerHTML;
-    if (cartProducts !== "" && confirm("Are you sure you want to checkout?")) {
-      clearCart();
-    } else {
-      return;
-    }
-  }
-
-  // BIND EVENTS AND CALL FUNCTIONS
-
-  // Page load:
-  document.addEventListener("DOMContentLoaded", function(e) {
-    // display list of products in cart, if any, on page load
-    displayProducts();
-    // display cart total
-    displayCartTotal();
-  });
-
-  // open and close shopping cart
-  // when cart button is clicked
-  toggleCartBtn.addEventListener("click", function(e) {
-    e.preventDefault();
-    toggleCart();
-  });
-
-  // Save product in cart and Local Storage
-  // when add to cart button is clicked
-  productsContainer.addEventListener("click", function(e) {
-    if (e.target.classList.contains("add-to-cart")) {
-      e.preventDefault();
-      const clickedBtn = e.target;
-      saveProduct(clickedBtn);
-    }
-  });
-
-  productsContainer.addEventListener("click", function(e) {
-    if (e.target.classList.contains("add-to-cart")) {
-      displayCartTotal();
-    }
-  });
-
-  // bind removeProduct to click event of the cartContent table
-  cartContent.querySelector("tbody").addEventListener("click", function(e) {
-    e.preventDefault();
-    // identify the button that was clicked
-    const clickedBtn = e.target;
-    // if it's a remove button
-    if (e.target.classList.contains("remove")) {
-      // get the value of the data-id property, which contains the
-      // id of the selected product
-      const productId = clickedBtn.getAttribute("data-id");
-      // use the id to remove the selected product
-      removeProduct(productId);
-      // display products in the cart again,
-      // now the list should be displayed with 1 less product
-      // or empty if no products are left in the cart
-
-      // adjust the total
-      displayCartTotal();
-    }
-  });
-
-  // bind the button to clear the cart both to the function that
-  // clears the cart and to the function that adjusts the total price
-  clearCartBtn.addEventListener("click", function(e) {
-    e.preventDefault();
-    clearCart();
-  });
-  clearCartBtn.addEventListener("click", displayCartTotal);
-
-  // bind the button that does the checkout both to the function that
-  // controls the checkout and and to the function that adjusts the total price
-  checkoutBtn.addEventListener("click", function(e) {
-    e.preventDefault();
-    checkout();
-  });
-  checkoutBtn.addEventListener("click", displayCartTotal);
-})();
+}

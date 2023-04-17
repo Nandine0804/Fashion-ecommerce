@@ -1,11 +1,33 @@
-<!DOCTYPE html>
+<?php require_once "controllerUserData.php"; ?>
+<?php 
+$email = $_SESSION['email'];
+$password = $_SESSION['password'];
+if($email != false && $password != false){
+    $sql = "SELECT * FROM usertable WHERE email = '$email'";
+    $run_Sql = mysqli_query($con, $sql);
+    if($run_Sql){
+        $fetch_info = mysqli_fetch_assoc($run_Sql);
+        $status = $fetch_info['status'];
+        $code = $fetch_info['code'];
+        if($status == "verified"){
+            if($code != 0){
+                header('Location: reset-code.php');
+            }
+        }else{
+            header('Location: user-otp.php');
+        }
+    }
+}else{
+    header('Location: login-user.php');
+}
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce website</title>
     <script src="https://kit.fontawesome.com/544ad584ac.js" crossorigin="anonymous"></script>
@@ -18,72 +40,64 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top" id="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="home.php">BRANDZZ</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container container header__top">
+            <a class="navbar-brand" href="index.php">BRANDZZ</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Shop</a>
+                        <a class="nav-link" href="shop.php">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
-                    <div class="icons">
-                        <li class="nav-item" id="bag">
+ <li>
+                        <div class="cart">
+                            <a href="cart.php">
+                                <i class="fas fa-shopping-cart"></i>
+                                </a>
+                                <p id="count">0</p></div>
+                     </li>
+                    
 
-                            <a href="cart.html">
-                                <img src=" https://cdn-icons-png.flaticon.com/512/687/687259.png " alt="bg ">
-                            </a>
-                        </li>
-
-                        <li class="nav-item ">
-                            <a href="account.html "><i class="fa-regular fa-user "></i></a>
-                        </li>
-                    </div>
                 </ul>
-            </div>
-        </div>
+                   <div class="icons">
+                    <ul>
+                        <li class="nav-item ml-10" id="detail_person">
+                            <h4 class="data">Hi <?php echo $fetch_info['name'] ?></h4>
+                             
+                        </li>
+                        <button type="button" id="logout" class="btn-dark"><a href="logout-user.php"><img src="logout.png" class="logout-logo" alt="logout"/>Logout</a></button>
+                    
+                    
+                    </ul>
+
+                    </div>
+
+             </div>
+        
     </nav>
 
-    <section class="my-5 py-5">
-        <div class="row container mx-auto">
-            <div class="text-center t-3 pt-5 col-lg-6 col-md-12 col-sm-12">
-
-                <h3 class="font-weight-bold">Account info</h3>
-                <hr class="hr mx-auto">
-                <div class="account-info">
-                    <p>Name<span>Nandine</span></p>
-                    <p>Email<span>nandine0804</span></p>
-                    <p>
-                        <a href="" id="order-btn">Your orders</a>
-                    </p>
-                    <p>
-                        <a href="" id="logout-btn">Logout</a>
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12">
-                <form id="account-form">
-                    <h3>Change password</h3>
-                    <hr class="hr mx-auto">
-                    <div class="form-group"> <label>Password</label>
-                        <input type="password" class="form-control" id="register-password" name="password" placeholder="" />
-                    </div>
-                    <div class="form-group"> <label>Confirm Password</label>
-                        <input type="password" class="form-control" id="register-confirm-password" name="password" placeholder="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" id="change-pass-btn" class="btn" value="Change Password" id="register-confirm-password" name="password" placeholder="" />
-                    </div>
-                </form>
-            </div>
+    <section id="content" class="container my-5 py-5">
+        <div class="container text-center mt-5">
+            <h3>Contact Us</h3>
+            <hr class="hr mx-auto">
+            <p class="w-50 mx-auto">
+                Phone number:123456789
+            </p>
+            <p class="w-50 mx-auto">
+                Email-address : BRANDZZ2email.com
+            </p>
+            <p class="w-50 mx-auto">
+                We work on fashion style
+            </p>
         </div>
     </section>
     <div class=" footer-basic ">
@@ -94,9 +108,9 @@
                 <a href=" # "><img src="https://cdn-icons-png.flaticon.com/512/2504/2504903.png " alt=" " /></a>
 
                 <ul class=" list-inline ">
-                    <li class=" list-inline-item "><a href="home.php">Home</a></li>
-                    <li class=" list-inline-item "><a href="shop.html">Shop</a></li>
-                    <li class=" list-inline-item "><a href="contact.html">Contact</a></li>
+                    <li class=" list-inline-item "><a href="index.php">Home</a></li>
+                    <li class=" list-inline-item "><a href="shop.php">Shop</a></li>
+                    <li class=" list-inline-item "><a href="contact.php">Contact</a></li>
 
                 </ul>
 
