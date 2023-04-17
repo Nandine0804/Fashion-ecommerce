@@ -66,9 +66,7 @@ if($email != false && $password != false){
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.php">Shop</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
@@ -215,6 +213,14 @@ if($email != false && $password != false){
 
     </section>
 
+    <section id="featured"  class="my-5 pb-5 ">
+        <div class="container text-center mt-5 py-5 ">
+            <h3>Our Featured</h3>
+            <hr class="hr mx-auto ">
+            <p>Life isn’t perfect but your outfit can be. <br/>A New Revolution.A New Perspective</p>
+        </div>
+        <div id="root_3"></div>
+    </section>
 
    
 <div class="container_1" id="cart-things">
@@ -228,7 +234,11 @@ if($email != false && $password != false){
                 </div>
             </div>
         </div>
-
+<div class="ch">
+    <button class="checkout">
+        <a href="checkout.php">CHECKOUT</a>
+    </button>
+</div>
         
 <div class=" footer-basic ">
     <footer>
@@ -239,8 +249,8 @@ if($email != false && $password != false){
            
         <ul class=" list-inline ">
     
-            <li class=" list-inline-item "><a href=" index.php ">Home</a></li>
-            <li class=" list-inline-item "><a href=" shop.php ">Shop</a></li>
+            <li class=" list-inline-item "><a href=" index.php">Home</a></li>
+          
             <li class=" list-inline-item "><a href=" contact.php ">Contact</a></li>
         
         

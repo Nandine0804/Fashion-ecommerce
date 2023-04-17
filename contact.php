@@ -52,15 +52,13 @@ if($email != false && $password != false){
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.php">Shop</a>
-                    </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
  <li>
                         <div class="cart">
-                            <a href="cart.php">
+                            <a href="index.php">
                                 <i class="fas fa-shopping-cart"></i>
                                 </a>
                                 <p id="count">0</p></div>
@@ -100,6 +98,9 @@ if($email != false && $password != false){
             </p>
         </div>
     </section>
+
+
+
     <div class=" footer-basic ">
         <footer>
             <div class=" social ">
@@ -109,7 +110,7 @@ if($email != false && $password != false){
 
                 <ul class=" list-inline ">
                     <li class=" list-inline-item "><a href="index.php">Home</a></li>
-                    <li class=" list-inline-item "><a href="shop.php">Shop</a></li>
+                  
                     <li class=" list-inline-item "><a href="contact.php">Contact</a></li>
 
                 </ul>
